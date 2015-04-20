@@ -17,14 +17,14 @@ public class ZRTusUtils {
   }
 
   class ZRTusRequestDelegate : NSObject, NSURLConnectionDataDelegate {
-    let progressHandler: ((Double) -> ())?
+    let progressHandler: ((Int, Int) -> ())?
     let completionHandler: (ZRTusRequestDelegate, NSHTTPURLResponse, NSData) -> ()
     let errorHandler: (ZRTusRequestDelegate, NSError) -> ()
     var response : NSHTTPURLResponse?
     var data : NSMutableData?
 
     init(
-      progressHandler: ((Double) -> ())?,
+      progressHandler: ((Int, Int) -> ())?,
       completionHandler: (ZRTusRequestDelegate, NSHTTPURLResponse, NSData) -> (),
       errorHandler: (ZRTusRequestDelegate, NSError) -> ()
     ) {
@@ -36,7 +36,7 @@ public class ZRTusUtils {
     func connection(connection: NSURLConnection, didSendBodyData bytesWritten: Int, totalBytesWritten: Int, totalBytesExpectedToWrite: Int) {
       if let handler = progressHandler {
         let progress = Double(totalBytesWritten) / Double(totalBytesExpectedToWrite) * 100
-        handler(progress)
+        handler(totalBytesWritten, totalBytesExpectedToWrite)
       }
     }
 
@@ -62,7 +62,7 @@ public class ZRTusUtils {
 
   static var delegates : [ZRTusRequestDelegate] = []
 
-  class func sendRequest(request: NSMutableURLRequest, progressHandler: ((Double) -> ())? = nil) -> Future<ZRTusHTTPResponse> {
+  class func sendRequest(request: NSMutableURLRequest, progressHandler: ((Int, Int) -> ())? = nil) -> Future<ZRTusHTTPResponse> {
     let promise = Promise<ZRTusHTTPResponse>()
     var resp: NSURLResponse? = nil
     var error: NSError? = nil

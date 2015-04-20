@@ -16,10 +16,10 @@ public class ZRTusUpload {
     case Failed(statusCode: Int, serverMessage: String)
   }
 
-  var url: NSURL
-  var fileName: NSString
-  var data: NSData?
-  dynamic var progress: Double
+  public var url: NSURL
+  public var fileName: NSString
+  public var data: NSData?
+  public dynamic var progress: Double
 
   public init(url: NSURL, fileName: NSString, data: NSData?) {
     self.url = url
@@ -64,7 +64,13 @@ public class ZRTusUpload {
     urlRequest.addValue(toString(offset), forHTTPHeaderField: "Offset")
     urlRequest.HTTPBody = self.data!.subdataWithRange(NSMakeRange(offset, self.data!.length - offset))
 
-    return ZRTusUtils.sendRequest(urlRequest).map { (resp) -> ZRTusUploadResponse in
+    func progressHandler(totalBytesWritten: Int, totalBytesExpectedToWrite: Int) {
+      let offsettedTotalBytesWritten = totalBytesWritten + offset
+      let offsettedTotalBytesExpectedToWrite = totalBytesExpectedToWrite + offset
+      self.progress = Double(offsettedTotalBytesWritten) / Double(offsettedTotalBytesExpectedToWrite)
+    }
+
+    return ZRTusUtils.sendRequest(urlRequest, progressHandler: progressHandler).map { (resp) -> ZRTusUploadResponse in
       let msg = NSString(data:resp.data, encoding: NSUTF8StringEncoding) as! String
 
       if (resp.httpResponse.statusCode == 200) {
