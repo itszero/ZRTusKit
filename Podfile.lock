@@ -1,0 +1,33 @@
+PODS:
+  - BrightFutures (1.0.0-beta.5)
+  - Mockingjay (0.2.0):
+    - Mockingjay/Core (= 0.2.0)
+    - Mockingjay/Session (= 0.2.0)
+    - Mockingjay/XCTest (= 0.2.0)
+  - Mockingjay/Core (0.2.0):
+    - URITemplate (~> 1.2)
+  - Mockingjay/Session (0.2.0):
+    - Mockingjay/Core
+  - Mockingjay/XCTest (0.2.0):
+    - Mockingjay/Core
+  - Nimble (0.4.2)
+  - ReactKit (0.9.0):
+    - SwiftTask (~> 3.0.0)
+  - SwiftTask (3.0.0)
+  - URITemplate (1.2.0)
+
+DEPENDENCIES:
+  - BrightFutures (~> 1.0.0-beta)
+  - Mockingjay
+  - Nimble
+  - ReactKit
+
+SPEC CHECKSUMS:
+  BrightFutures: e957f91c50c398f52d2173bb32d0c61a5c34df3d
+  Mockingjay: 8635bddf88b7c93833db67e1dc54b8ffe7efe921
+  Nimble: 49b7a7da8919f42823d37c6d68cc6d15a7009f32
+  ReactKit: ac52dd22d3c085fc28db3b9282e984dd96b8ec52
+  SwiftTask: 2f2c0a7db83def1d1e3bad518169be3f61c603f4
+  URITemplate: 0dbf40f0e378eb9c6d04cc08e6101fb82d126dc3
+
+COCOAPODS: 0.37.0.beta.1
