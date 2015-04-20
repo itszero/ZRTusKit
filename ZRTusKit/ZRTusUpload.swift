@@ -8,7 +8,6 @@
 
 import Foundation
 import BrightFutures
-import ReactKit
 
 public class ZRTusUpload {
 
@@ -20,11 +19,13 @@ public class ZRTusUpload {
   var url: NSURL
   var fileName: NSString
   var data: NSData?
+  dynamic var progress: Double
 
   public init(url: NSURL, fileName: NSString, data: NSData?) {
     self.url = url
     self.fileName = fileName
     self.data = data
+    self.progress = 0
   }
 
   public func upload() -> Future<ZRTusUploadResponse> {
