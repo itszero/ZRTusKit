@@ -1,0 +1,9 @@
+language: objective-c
+before_install:
+- gem install cocoapods --pre --no-document
+- gem install xcpretty --no-document
+- brew update
+- brew install xctool
+script:
+- xctool -workspace ZRTusKit -scheme ZRTusKit build test
+- pod lib lint --quick

@@ -8,6 +8,7 @@
 
 import Foundation
 import XCTest
+import ReactKit
 import ZRTusKit
 import URITemplate
 import Mockingjay

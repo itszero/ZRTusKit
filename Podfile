@@ -7,5 +7,5 @@ use_frameworks!
 
 pod 'ReactKit'
 pod 'BrightFutures', '~> 1.0.0-beta'
-pod 'Mockingjay'
+pod 'Mockingjay', :git => "https://github.com/itszero/Mockingjay.git", :branch => "http-head"
 pod 'Nimble'

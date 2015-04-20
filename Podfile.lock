@@ -18,9 +18,19 @@ PODS:
 
 DEPENDENCIES:
   - BrightFutures (~> 1.0.0-beta)
-  - Mockingjay
+  - Mockingjay (from `https://github.com/itszero/Mockingjay.git`, branch `http-head`)
   - Nimble
   - ReactKit
+
+EXTERNAL SOURCES:
+  Mockingjay:
+    :branch: http-head
+    :git: https://github.com/itszero/Mockingjay.git
+
+CHECKOUT OPTIONS:
+  Mockingjay:
+    :commit: ef1924312ca9e176fa0be6df662cca20b40bc32d
+    :git: https://github.com/itszero/Mockingjay.git
 
 SPEC CHECKSUMS:
   BrightFutures: e957f91c50c398f52d2173bb32d0c61a5c34df3d

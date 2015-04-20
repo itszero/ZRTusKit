@@ -8,6 +8,7 @@
 
 import Foundation
 import BrightFutures
+import ReactKit
 
 public class ZRTusUpload {
 
