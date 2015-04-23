@@ -9,7 +9,7 @@
 import Foundation
 import BrightFutures
 
-public class ZRTusUpload {
+public class ZRTusUpload : NSObject {
 
   public enum ZRTusUploadResponse {
     case Success(statusCode: Int, serverMessage: String)
