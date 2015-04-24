@@ -6,5 +6,5 @@ inhibit_all_warnings!
 use_frameworks!
 
 pod 'BrightFutures', '~> 1.0.0-beta'
-pod 'Mockingjay', :git => 'git@github.com:kylef/Mockingjay.git'
+pod 'Mockingjay', :git => 'http://github.com/kylef/Mockingjay.git'
 pod 'Nimble'

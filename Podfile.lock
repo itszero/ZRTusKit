@@ -15,17 +15,17 @@ PODS:
 
 DEPENDENCIES:
   - BrightFutures (~> 1.0.0-beta)
-  - Mockingjay (from `git@github.com:kylef/Mockingjay.git`)
+  - Mockingjay (from `http://github.com/kylef/Mockingjay.git`)
   - Nimble
 
 EXTERNAL SOURCES:
   Mockingjay:
-    :git: git@github.com:kylef/Mockingjay.git
+    :git: http://github.com/kylef/Mockingjay.git
 
 CHECKOUT OPTIONS:
   Mockingjay:
     :commit: 4eac2bb6fb0f4154fbd36d7c3d1b6dd71277863f
-    :git: git@github.com:kylef/Mockingjay.git
+    :git: http://github.com/kylef/Mockingjay.git
 
 SPEC CHECKSUMS:
   BrightFutures: 726c00ea7387783b3e160550ed6d35ca010de0ad
