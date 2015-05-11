@@ -12,5 +12,4 @@ Pod::Spec.new do |spec|
   spec.osx.deployment_target = '10.10'
 
   spec.dependency 'BrightFutures', '~> 1.0-beta'
-  spec.dependency 'ReactKit', '~> 0.9'
 end
